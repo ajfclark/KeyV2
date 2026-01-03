@@ -51,7 +51,14 @@ sofle_thumbs_r_front_legends = [
 
 module sofle_default(profile, row_sculpting_offset=1, column_override=undef) {
   layout(sofle_main, profile, legends=sofle_main_legends, front_legends=sofle_main_front_legends, row_sculpting_offset=row_sculpting_offset, column_override=column_override, column_sculpt_profile="cresting_wave") children();
-  translate_u(5,-4) rotate([0,0,0]) layout(sofle_thumbs_l, profile, legends=sofle_thumbs_l_legends, front_legends=sofle_thumbs_l_front_legends, row_sculpting_offset=row_sculpting_offset, column_override=column_override, column_sculpt_profile="cresting_wave") children();
-  translate_u(7.25,-4) rotate([0,0,0]) layout(sofle_thumbs_r, profile, legends=sofle_thumbs_r_legends, front_legends=sofle_thumbs_r_front_legends, row_sculpting_offset=row_sculpting_offset, column_override=column_override, column_sculpt_profile="cresting_wave") children();
+  translate_u(5,-4) rotate([0,0,0]) layout([[1]], profile, legends=[["\u2207"]], front_legends=[["\u2207"]], row_sculpting_offset=row_sculpting_offset+4, column_override=column_override, column_sculpt_profile="cresting_wave") children();
+  translate_u(9,-4) rotate([0,0,0]) layout([[1]], profile, legends=[["\u2206"]], front_legends=[["\u2206"]], row_sculpting_offset=row_sculpting_offset+4, column_override=column_override, column_sculpt_profile="cresting_wave") children();
+  translate_u(6.25,-5.25)
+rotate([0,0,75])
+layout([[1.75]], profile, legends=[["\u23de"]], front_legends=[["enter"]], row_sculpting_offset=row_sculpting_offset+4, column_override=column_override, column_sculpt_profile="cresting_wave") children();
+translate_u(8.25,-5.25)
+translate_u(-.5,1.75,0)
+rotate([0,0,-75])
+layout([[1.75]], profile, legends=[[" "]], front_legends=[["space"]], row_sculpting_offset=row_sculpting_offset+4, column_override=column_override, column_sculpt_profile="cresting_wave") children();
 
 }
