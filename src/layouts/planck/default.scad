@@ -18,6 +18,6 @@ planck_default_legends = [
 ];
 
 
-module planck_default(profile, column_sculpt_profile="2hands") {
+module planck_default(profile, column_sculpt_profile="twohands") {
   layout(planck_default_layout, profile, row_sculpting_offset=1, column_sculpt_profile=column_sculpt_profile) children();
 }

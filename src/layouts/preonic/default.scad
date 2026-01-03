@@ -16,6 +16,6 @@ preonic_default_legends = [
   [ "Fn", "Ctl", "Alt", "Cmd", "Lwr",  "",  "", "", "RSE", "←", "↓", "↑", "→"],
 ];
 
-module preonic_default(profile, column_sculpt_profile="2hands") {
+module preonic_default(profile, column_sculpt_profile="twohands") {
   layout(preonic_default_layout, profile, column_sculpt_profile=column_sculpt_profile) children();
 }
