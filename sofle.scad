@@ -19,7 +19,7 @@ include <./includes.scad>
 // example layout
 /* preonic_default("dcs") key(); */
 //translate([-157,0,0])
-sofle_default("dcs") key();
+sofle_default("cherry") key();
 //"Code2000:style=Regular"
 
 
