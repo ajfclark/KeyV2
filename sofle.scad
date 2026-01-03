@@ -18,6 +18,13 @@ include <./includes.scad>
 
 // example layout
 /* preonic_default("dcs") key(); */
-translate([-160,0,0])
+//translate([-157,0,0])
 sofle_default("dcs") key();
 //"Code2000:style=Regular"
+
+
+//for(i=[0:1]) {
+//    mirror([i,0,0])
+//    translate([-10,-120,0])
+//    import("models/sofle.stl");
+//}
