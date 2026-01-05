@@ -1,6 +1,6 @@
 include <../libraries/3d_surface.scad>
 
-module 3d_surface_dish(width, height, depth, inverted) {
+module threed_surface_dish(width, height, depth, inverted) {
   echo(inverted ? "inverted" : "not inverted");
   // scale_factor is dead reckoning
   // it doesn't have to be dead reckoning for anything but sculpted sides
