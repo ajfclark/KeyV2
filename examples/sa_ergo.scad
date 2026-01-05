@@ -30,9 +30,9 @@ simple_layout(preonic_default_layout) {
   union() {
     // row declarations treat column 0 as perfectly center, so if we just used
     // $column we'd have a ridiculously looking left-leaning keyboard.
-    // this function transforms the actual column value into a "2hands" column
+    // this function transforms the actual column value into a "twohands" column
     // value, aka for a board with 2 "keywells", one for each hand
-    column_value = double_sculpted_column($column, row_length, "2hands");
+    column_value = double_sculpted_column($column, row_length, "twohands");
     /* echo("column value", column_value); */
     sa_row($row+1, column_value){
       // uh oh, now I need two of them...

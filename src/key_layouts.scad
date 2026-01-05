@@ -8,8 +8,6 @@ include <layouts/planck/mit.scad>
 
 include <layouts/lets_split/default.scad>
 
-include <layouts/sofle/default.scad>
-
 include <layouts/project_zen/default.scad>
 
 include <layouts/sixty_percent/default.scad>
