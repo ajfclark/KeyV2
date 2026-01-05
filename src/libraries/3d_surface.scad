@@ -2,7 +2,7 @@
 
 include <../functions.scad>
 
-module 3d_surface(size=$3d_surface_size, step=$3d_surface_step, bottom=-SMALLEST_POSSIBLE){
+module threed_surface(size=$3d_surface_size, step=$3d_surface_step, bottom=-SMALLEST_POSSIBLE){
   function p(x, y) = [ x, y, max(0,$surface_function(x, y) * $corner_smoothing_surface_function(x,y)) ];
   function p0(x, y) = [ x, y, bottom ];
   function rev(b, v) = b ? v : [ v[3], v[2], v[1], v[0] ];
