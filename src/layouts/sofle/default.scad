@@ -1,19 +1,19 @@
 include <../layout.scad>
 
 sofle_left_layout = [
-  [ 1, 1, 1, 1, 1, 1, -1.75],
-  [ 1, 1, 1, 1, 1, 1, -1.75],
-  [ 1, 1, 1, 1, 1, 1, -1.75],
-  [ 1, 1, 1, 1, 1, 1, -1.75],
-  [-1,-1, 1, 1, 1, 1, 1.75],
+  [ 1, 1, 1, 1, 1, 1, -1.5],
+  [ 1, 1, 1, 1, 1, 1, -1.5],
+  [ 1, 1, 1, 1, 1, 1, -1.5],
+  [ 1, 1, 1, 1, 1, 1, -1.5],
+  [-1,-1, 1, 1, 1, 1, 1.5],
 ];
 
 sofle_right_layout = [
-  [-1.75, 1, 1, 1, 1, 1, 1],
-  [-1.75, 1, 1, 1, 1, 1, 1],
-  [-1.75, 1, 1, 1, 1, 1, 1],
-  [-1.75, 1, 1, 1, 1, 1, 1],
-  [ 1.75, 1, 1, 1, 1,-1,-1],
+  [-1.5, 1, 1, 1, 1, 1, 1],
+  [-1.5, 1, 1, 1, 1, 1, 1],
+  [-1.5, 1, 1, 1, 1, 1, 1],
+  [-1.5, 1, 1, 1, 1, 1, 1],
+  [ 1.5, 1, 1, 1, 1,-1,-1],
 ];
 
 sofle_default_legends = [
@@ -37,7 +37,7 @@ sofle_left_x_offset = [
   [ 0, 0, 0, 0, 0, 0, 0],
   [ 0, 0, 0, 0, 0, 0, 0],
   [ 0, 0, 0, 0, 0, 0, 0],
-  [ 0, 0, 0, 0, 0, 2.5, -2.5],
+  [ 0, 0, 0, 0, 0, 2.5, -0.5],
 ];
 
 sofle_left_y_offset = [
@@ -48,34 +48,33 @@ sofle_left_y_offset = [
    [0, 0, 5, 7.5, 5, 0.25, -5],
 ];
 
-module sofle_left() {
+module sofle_left(legends=sofle_default_legends) {
+    translate([-161,118,0])
     simple_layout(sofle_left_layout) {
         x=sofle_left_x_offset[$row][$column];
         y=sofle_left_y_offset[$row][$column];
         z=sofle_left_rotate[$row][$column];
 
         translate([x,y,0]) rotate([0,0,z])
-            legend(sofle_default_legends[$row][$column])
+            legend(legends[$row][$column])
                 children();
     }
 }
 
-module sofle_right() {
+module sofle_right(legends=sofle_default_legends) {
+    translate([18,118,0])
     simple_layout(sofle_right_layout) {
         x=sofle_left_x_offset[$row][6-$column];
         y=sofle_left_y_offset[$row][6-$column];
         z=sofle_left_rotate[$row][6-$column];
 
         translate([-x,y,0]) rotate([0,0,-z])
-            legend(sofle_default_legends[$row][7+$column])
+            legend(legends[$row][7+$column])
                 children();
         }
 }
 
-module sofle_both() {
-    translate([-165.5,118,0])
-        sofle_left() children();
-
-    translate([18,118,0])
-        sofle_right() children();
+module sofle_both(legends=sofle_default_legends) {
+        sofle_left(legends) children();
+        sofle_right(legends) children();
 }
